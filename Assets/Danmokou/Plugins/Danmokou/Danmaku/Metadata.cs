@@ -73,7 +73,7 @@ public class DifficultySettings {
     }
     public DifficultySettings(FixedDifficulty? standard, int slider=DEFAULT_SLIDER, int? rank = null, 
         int numSuicideBullets = 0,
-        double playerDamageMod=1f, float bulletSpeedMod=1f, double bossHPMod=1f, bool respawnOnDeath = false, 
+        double playerDamageMod=1f, float bulletSpeedMod=1f, double bossHPMod=1f, bool respawnOnDeath = true, 
         double faithDecayMult=1, double faithAcquireMult=1, double meterUsageMult=1, double meterAcquireMult=1, 
         bool bombsEnabled=true, bool meterEnabled=true, 
         float playerSpeedMult=1f, float playerHitboxMult=1f, float playerGrazeboxMult=1f,

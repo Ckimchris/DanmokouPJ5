@@ -16,6 +16,8 @@ MonoBehaviour:
   focusSlowdown: 0.44
   hurtboxRadius: 0.034
   grazeboxRadius: 0.42
+  itemCollectRadius: 0.2
+  itemAttractRadius: 1
   key: basic-reimu
   shortTitle:
     useReference: 1
@@ -31,6 +33,8 @@ MonoBehaviour:
     shot: {fileID: 11400000, guid: 7aea117ce3a952f42911167011a10d91, type: 2}
   - ordinal: C
     shot: {fileID: 11400000, guid: 35ba3e93f4382a84ebdea9e89ab73c60, type: 2}
+  - ordinal: D
+    shot: {fileID: 11400000, guid: b2157e9368eab134d92f519582e545b5, type: 2}
   supports:
   - ordinal: Ability 1
     ability: {fileID: 11400000, guid: 13157d81a8a5ff646accca16a0311ad8, type: 2}

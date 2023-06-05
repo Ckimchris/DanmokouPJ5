@@ -37,12 +37,13 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         public readonly int enemyIndex;
         public bool Active => allEnemies.ContainsKey(enemyIndex);
         public readonly Enemy enemy;
-
+        public readonly bool bladeFixed;
         public FrozenCollisionInfo(Enemy e) {
             location = e.Beh.GlobalPosition();
             radius = e.collisionRadius;
             enemy = e;
             enemyIndex = e.enemyIndex;
+            bladeFixed = e.bladeFixed;
         }
     }
 
@@ -52,6 +53,9 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
     private (bool _, Enemy to)? divertHP = null;
     public double HP { get; private set; }
     public int maxHP = 1000;
+    public double BladeFixDamage { get; private set; } = 0;
+    public int maxBladeFixDamage = 100;
+    public int currBladeFixDamage = 0;
     public int PhotoHP { get; private set; } = 1;
     private int maxPhotoHP = 1;
     public int PhotosTaken { get; private set; } = 0;
@@ -60,7 +64,7 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
     public Vulnerability Vulnerable { get; private set; }
     //private static int enemyIndexCtr = 0;
     //private int enemyIndex;
-
+    public bool bladeFixed;
     public bool canTaiAtariPlayer;
     /// <summary>
     /// Hurtbox radius.
@@ -81,7 +85,9 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
 
     [Header("Healthbar Controller (Optional)")]
     public SpriteRenderer? healthbarSprite;
+    public SpriteRenderer? meterSprite;
     private MaterialPropertyBlock hpPB = null!;
+    private MaterialPropertyBlock meterPB = null;
     public SpriteRenderer? cardCircle;
     private bool hasCardCircle;
     public SpriteRenderer? spellCircle;
@@ -152,15 +158,19 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         if (hasCardCircle = (cardCircle != null))
             cardCircle!.sortingOrder = sortOrder + 2;
         if (healthbarSprite != null) healthbarSprite.sortingOrder = sortOrder + 3;
+        if (meterSprite != null) healthbarSprite.sortingOrder = sortOrder + 3;
         if (hasDistorter = (distorter != null)) 
             distorter!.sortingOrder = sortOrder;
         allEnemies[enemyIndex = enemyIndexCtr++] = this;
         tokens.Add(orderedEnemies.Add(this));
         HP = maxHP;
+        BladeFixDamage = 0;
+        currBladeFixDamage = 0;
         queuedDamage = 0;
         Vulnerable = Vulnerability.VULNERABLE;
         target = ServiceLocator.MaybeFind<PlayerController>();
         hpPB = new MaterialPropertyBlock();
+        meterPB = new MaterialPropertyBlock();
         distortPB = new MaterialPropertyBlock();
         scPB = new MaterialPropertyBlock();
         if (cameraCrosshair != null) cameraCrosshair.enabled = false;
@@ -178,6 +188,7 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
             hpPB.SetColor(PropConsts.fillColor, currPhase.color1);
             healthbarSprite.SetPropertyBlock(hpPB);
         }
+
         if (cardCircle != null) {
             cardtr = cardCircle.transform;
             cardCircle.enabled = false;
@@ -270,6 +281,8 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
     private float HPRatio => (float)(HP / maxHP);
     private float PhotoRatio => (float) PhotoHP / maxPhotoHP;
     private float BarRatio => Math.Min(PhotoRatio, HPRatio);
+    private float BladeFixRatio => (float) BladeFixDamage / maxBladeFixDamage;
+
     [UsedImplicitly]
     public float EffectiveBarRatio => divertHP?.to.EffectiveBarRatio ?? BarRatio;
     private float _displayBarRatio;
@@ -324,6 +337,14 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
             }
         }
         hitCooldowns.Keys.Compact();
+
+        if(currBladeFixDamage > 0)
+        {
+            bladeFixed = true;
+        }
+        else {
+            bladeFixed = false;
+        }
     }
 
     public override void RegularUpdateCollision() {
@@ -347,6 +368,8 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
             hpPB.SetColor(PropConsts.fillColor, HPColor);
             hpPB.SetFloat(PropConsts.time, Beh.rBPI.t);
             healthbarSprite.SetPropertyBlock(hpPB);
+        }
+        if(meterSprite != null) { 
         }
     }
     
@@ -454,6 +477,7 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
             if ((float) HP / maxHP < LOW_HP_THRESHOLD) {
                 Counter.AlertLowEnemyHP();
             }
+            //Debug.Log("Taking Damage");
         }
     }
     
@@ -488,6 +512,12 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         maxPhotoHP = newMaxHP;
         PhotoHP = newCurrHP;
         PhotosTaken = 0;
+    }
+
+    public void SetMeter(int newMeterP, int newCurrMeterP)
+    {
+        maxBladeFixDamage = newMeterP;
+        BladeFixDamage = newCurrMeterP;
     }
 
     public void SetVulnerable(Vulnerability v) => Vulnerable = v;
@@ -635,13 +665,50 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         return found;
     }
 
+    //FindNearestMarked
+    //Check if this enemy is marked = true
+    //if marked = true then return found
+
+    [UsedImplicitly]
+    public static bool FindNearestMarked(Vector3 source, out Vector2 position) {
+        Profiler.BeginSample("FindNearestMarked");
+        bool found = false;
+        position = default;
+        float lastDist = 0f;
+        for (int ie = 0; ie < frozenEnemies.Count; ++ie) {
+            var e = frozenEnemies[ie];
+            if (e.Active && LocationHelpers.OnPlayableScreen(e.location)) {
+                var dst = (e.location.x - source.x) * (e.location.x - source.x) + (e.location.y - source.y) * (e.location.y - source.y);
+                if(e.bladeFixed)
+                {
+                        if (!found || dst < lastDist)
+                        {
+                            lastDist = dst;
+                            found = true;
+                            position = e.location;
+                        }
+                }
+            }
+        }
+        Profiler.EndSample();
+        return found;
+    }
+
+    private void SetMeterActivated(Color c) {
+        c.a = 1;
+        meterPB.SetColor(PropConsts.fillColor, c);
+        meterPB.SetColor(PropConsts.fillColor2, c);
+    }
+
     public static readonly ExFunction findNearest = ExFunction.Wrap<Enemy>("FindNearest", new[] {
         typeof(Vector3), typeof(Vector2).MakeByRefType()
     });
     public static readonly ExFunction findNearestSave = ExFunction.Wrap<Enemy>("FindNearestSave", new[] {
         typeof(Vector3), typeof(int?), typeof(int).MakeByRefType(), typeof(Vector2).MakeByRefType()
     });
-    
-    
-}
+
+    public static readonly ExFunction findNearestMarked = ExFunction.Wrap<Enemy>("FindNearestMarked", new[] {
+        typeof(Vector3), typeof(Vector2).MakeByRefType()
+    });
+    }
 }

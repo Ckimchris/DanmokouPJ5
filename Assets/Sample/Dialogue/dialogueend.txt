@@ -1,0 +1,14 @@
+script
+place l1 reimu
+place r1 yukari
+sl reimu
+sr yukari
+slce worry
+. `That was kinda lame. It was almost like you whipped these up in a weekend.`
+z
+slce worry
+. `Not all of them were even that original either.`
+z
+srce worry
+. `sniff...It actually was just a weekend...`
+z

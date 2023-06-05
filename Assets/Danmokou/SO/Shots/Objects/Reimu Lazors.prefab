@@ -105,12 +105,6 @@ MonoBehaviour:
   cullableRadius:
     cullable: 0
     cullRadius: {fileID: 0}
-  collisionInfo:
-    collisionRadius: 0
-    CollisionActiveOnInit: 0
-    destructible: 0
-    grazeEveryFrames: 0
-    allowGraze: 0
   displayer: {fileID: 0}
   offsetFree: zero
   offsetFocus: zero
@@ -187,12 +181,6 @@ MonoBehaviour:
   cullableRadius:
     cullable: 0
     cullRadius: {fileID: 0}
-  collisionInfo:
-    collisionRadius: 0
-    CollisionActiveOnInit: 0
-    destructible: 0
-    grazeEveryFrames: 0
-    allowGraze: 0
   displayer: {fileID: 0}
   offsetFree: zero
   offsetFocus: zero
@@ -313,12 +301,6 @@ MonoBehaviour:
   cullableRadius:
     cullable: 0
     cullRadius: {fileID: 0}
-  collisionInfo:
-    collisionRadius: 0
-    CollisionActiveOnInit: 0
-    destructible: 0
-    grazeEveryFrames: 0
-    allowGraze: 0
   displayer: {fileID: 0}
   offsetFree: zero
   offsetFocus: zero
@@ -449,12 +431,6 @@ MonoBehaviour:
   cullableRadius:
     cullable: 0
     cullRadius: {fileID: 0}
-  collisionInfo:
-    collisionRadius: 0
-    CollisionActiveOnInit: 0
-    destructible: 0
-    grazeEveryFrames: 0
-    allowGraze: 0
   displayer: {fileID: 0}
   offsetFree: zero
   offsetFocus: zero
@@ -585,12 +561,6 @@ MonoBehaviour:
   cullableRadius:
     cullable: 0
     cullRadius: {fileID: 0}
-  collisionInfo:
-    collisionRadius: 0
-    CollisionActiveOnInit: 0
-    destructible: 0
-    grazeEveryFrames: 0
-    allowGraze: 0
   displayer: {fileID: 0}
   offsetFree: zero
   offsetFocus: zero

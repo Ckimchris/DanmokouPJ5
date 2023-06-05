@@ -113,7 +113,7 @@ public class ExampleADVSetup : MonoBehaviour, IGlobalVNDataProvider {
 
     [ContextMenu("Save")]
     public void Save() {
-        File.WriteAllText(AssetDatabase.GetAssetPath(saveTo), Serialization.SerializeJson(manager.GetSaveReadyADVData()));
+       // File.WriteAllText(AssetDatabase.GetAssetPath(saveTo), Serialization.SerializeJson(manager.GetSaveReadyADVData()));
     }
 }
 }

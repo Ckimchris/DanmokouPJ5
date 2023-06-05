@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a92301f86b4dd690557658c7243e8b, type: 3}
+  m_Name: BossConfig
+  m_EditorClassIdentifier: 
+  boss: {fileID: 6274564262994426332, guid: 2e4cfe2f6f8095747a49bcb45d5dea46, type: 3}
+  localizationBaseKey: boss.yukari
+  m_casualName:
+    useReference: 1
+    reference: 
+    hardcoded:
+      en: 
+      jp: 
+  m_bossPracticeName:
+    useReference: 1
+    reference: 
+    hardcoded:
+      en: 
+      jp: 
+  replayNameOverride:
+    useReference: 1
+    reference: 
+    hardcoded:
+      en: 
+      jp: 
+  bottomTrackerNameOverride:
+    useReference: 1
+    reference: 
+    hardcoded:
+      en: 
+      jp: 
+  stateMachine: {fileID: 4900000, guid: b8e74d1322cd6c04dbde109b5627296f, type: 3}
+  key: gj.yukari
+  colors: {fileID: 11400000, guid: 66066e3307d76c148bc8359780400873, type: 2}
+  cardRotator: 
+  spellRotator: 
+  profile:
+    leftSidebar: {fileID: 0}
+    rightSidebar: {fileID: 0}
+  defaultNonBG: {fileID: 6385824947720016875, guid: c0ac94633a048e24497805c0d3ed236e,
+    type: 3}
+  defaultSpellBG: {fileID: 5180723301924424041, guid: 7111b51df44de5b4fbde84d042b2f9a4,
+    type: 3}
+  defaultIntoSpellTransition: {fileID: 11400000, guid: 9b0abf82e07299741a4d64ecd57ff7e6,
+    type: 2}
+  defaultIntoNonTransition: {fileID: 11400000, guid: 23d9a9fbcd555004c9905acab3bc372a,
+    type: 2}
+  bossCutin: {fileID: 2426727079670566650, guid: ce1ff27263b06dc498849833756d11f7,
+    type: 3}
+  spellCutins:
+  - {fileID: 2426727079670566650, guid: a7a64d0f51970094eaba275ad7665f0c, type: 3}

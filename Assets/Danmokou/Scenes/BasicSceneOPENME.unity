@@ -200,7 +200,7 @@ PrefabInstance:
         type: 3}
       propertyPath: behaviorScript
       value: 
-      objectReference: {fileID: 2811297602134710623, guid: 8247baec1bb24a24d8e6f33a4dd4716f,
+      objectReference: {fileID: 2811297602134710623, guid: f183a989ef7bf8548bea073df3cea048,
         type: 3}
     - target: {fileID: 5738943023965476947, guid: 567949ea02f82894482d1922e940c492,
         type: 3}
@@ -271,6 +271,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3290238121844968753, guid: cd77fcd8b4e4d41489479fb8f6de0a18,
+        type: 3}
+      propertyPath: defaultSupport
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a0c5b4cb7a173245835d11e28585c65,
+        type: 2}
+    - target: {fileID: 3290238121844968753, guid: cd77fcd8b4e4d41489479fb8f6de0a18,
+        type: 3}
+      propertyPath: defaultShots.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3290238121844968753, guid: cd77fcd8b4e4d41489479fb8f6de0a18,
+        type: 3}
+      propertyPath: defaultPlayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3290238121844968753, guid: cd77fcd8b4e4d41489479fb8f6de0a18,
+        type: 3}
+      propertyPath: defaultShots.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b2157e9368eab134d92f519582e545b5,
+        type: 2}
+    - target: {fileID: 3290238121844968753, guid: cd77fcd8b4e4d41489479fb8f6de0a18,
+        type: 3}
+      propertyPath: defaultPlayers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2837e4ddce10a134ebcede695c842b92,
+        type: 2}
     - target: {fileID: 3290238121844968754, guid: cd77fcd8b4e4d41489479fb8f6de0a18,
         type: 3}
       propertyPath: m_Name
@@ -563,6 +591,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6701421480483869197, guid: cca0d5f4466f12c48b79ed20b74f5cef,
+        type: 3}
+      propertyPath: references
+      value: 
+      objectReference: {fileID: 11400000, guid: a67dc6921122bc140ae3504a4f487887,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca0d5f4466f12c48b79ed20b74f5cef, type: 3}
 --- !u!1001 &8605995698196633250

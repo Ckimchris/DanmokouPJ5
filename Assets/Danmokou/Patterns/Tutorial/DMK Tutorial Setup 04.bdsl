@@ -1,0 +1,28 @@
+pattern { }
+phase 0
+	paction 0
+		position 0 3
+		shift-phase-to 2
+
+##1. Straight lasers, size control
+phase 0 #{
+	paction 0
+		sync gstretchlaser-blue/ <;:-90> 
+			laser(rvelocity(cy(0)), 1, 2, {
+				sfx2(x-laser-fire, x-laser-on) 
+				s + 10 * 100 p
+			})
+#}
+
+##2. Straight lasers, size control
+phase 0 #{
+	paction 0
+		sync gstretchlaser-blue/b <;:-90> 
+			laser roffset px sine 10 0.5 t
+				1 1 {
+					dsfx
+					s + 10 * 5 p
+					length 10
+					repeat
+				}
+#}

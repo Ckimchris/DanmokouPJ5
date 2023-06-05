@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f64d4a00c194018afbe5db3323da211, type: 3}
+  m_Name: Campaign
+  m_EditorClassIdentifier: 
+  key: gj.main
+  shortTitle: Main
+  replayable: 1
+  allowDialogueSkip: 1
+  startLives: 8
+  players:
+  - {fileID: 11400000, guid: 2837e4ddce10a134ebcede695c842b92, type: 2}
+  stages:
+  - {fileID: 11400000, guid: 7f328c433f0bc2e489edb9c629ec1467, type: 2}
+  practiceBosses:
+  - {fileID: 11400000, guid: b2da50f59096bc642a10b7ea44ff42bc, type: 2}
+  endings: []

@@ -1,0 +1,29 @@
+script
+place l1 reimu
+place r1 yukari
+sl reimu
+sr yukari
+srce happy
+. `Heya Reimu. I've been making patterns for the snow games. Wanna give em a try?`
+z
+slce worry
+. `What the heck are snow games?`
+z
+srce happy
+. `Don't you worry about a thing. It's just like regular danmaku.`
+z
+srce happy
+. `Use the arrow keys to move. If you hold left shift you'll go into focused mode that lets you move slower.`
+z
+srce happy
+. `The Z button is to shoot as usual, but the X button isn't a bomb.`
+z
+srce happy
+. `Instead it's a slow down mechanic. You can hold it for as long as you have meter based on the yellow gauge on the bottom left.`
+z
+srce happy
+. `Be careful, you won't be able to use it if it's depleted more than 40% of the way.`
+z
+slce happy
+. `Alright, alright. Let's get this started then.`
+z

@@ -144,7 +144,7 @@ public static class SaveData {
         public float Screenshake = 1f;
         public FullScreenMode Fullscreen = FullScreenMode.FullScreenWindow;
         public int Vsync = 0;
-        public bool UnfocusedHitbox = true;
+        public bool UnfocusedHitbox = false;
         public Evented<float> MasterVolume { get; } = new(1f);
         public Evented<float> _BGMVolume { get; } = new(1f);
         [JsonIgnore]
@@ -220,6 +220,7 @@ public static class SaveData {
                     Resolution = (1600, 900),
 #else
                     Resolution = Resolution,
+
 #endif
                 };
             }

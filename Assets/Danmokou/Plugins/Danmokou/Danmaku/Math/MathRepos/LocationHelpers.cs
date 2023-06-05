@@ -157,6 +157,16 @@ public static partial class Parametrics {
             loc
         );
     };
+
+    public static ExTP TestNearestEnemy() => b => {
+        var loc = new TExV2();
+        return Ex.Block(new ParameterExpression[] { loc },
+            Ex.IfThen(Ex.Not(Enemy.findNearestMarked.Of(b.LocV3, loc)),
+                loc.Is(Ex.Constant(new Vector2(0f, 50f)))
+            ),
+            loc
+        );
+    };
     
     
     public static ExTP LSaveNearestEnemy() => b => {
