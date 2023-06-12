@@ -157,6 +157,7 @@
     <None Include="Assets\SiMP\Scripts\simp.seija.bdsl" />
     <None Include="Assets\Danmokou\Patterns\examples\extra sp.bdsl" />
     <None Include="Assets\Danmokou\Patterns\PlayerFire\Reimu Lasers 1234.bdsl" />
+    <None Include="Assets\Danmokou\Rendering\Shaders\Display\UI\BladeFixFillBar.shader" />
     <None Include="Assets\Danmokou\UXML\structures\Markdown\MkParagraph.uxml" />
     <None Include="Assets\SiMP\Dialogue\simp.dialogue.3.4.txt" />
     <None Include="Assets\Danmokou\Patterns\Testing\Summon Time Test.txt" />
@@ -168,6 +169,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Danmokou\Rendering\Shaders\Display\UI\FillBar MoF.shader" />
     <None Include="Assets\Danmokou\Patterns\Testing\Control Batching Test.txt" />
+    <None Include="Assets\Danmokou\Patterns\PlayerFire\Sakuya 0.bdsl" />
     <None Include="Assets\Danmokou\Patterns\Testing\GCXP Sequential GTR Test.txt" />
     <None Include="Assets\Danmokou\MiniProjects\WebGL Demo\070 dynamic lasers.txt" />
     <None Include="Assets\Danmokou\Rendering\Shaders\Display\BG\EbbFlowFire.shader" />
@@ -199,6 +201,7 @@
     <None Include="Assets\Danmokou\UXML\nodes\UINodeLRFlush.uxml" />
     <None Include="Assets\Danmokou\Patterns\PlayerFire\Mokou ArrowPather 3456.bdsl" />
     <None Include="Assets\Danmokou\Rendering\Shaders\WIP\Blend Test.shader" />
+    <None Include="Assets\Danmokou\Patterns\PlayerFire\Sakuya 1234.bdsl" />
     <None Include="Assets\Danmokou\Rendering\Shaders\Display\BG\BackgroundCombiner.shader" />
     <None Include="Assets\SZYU\Plugins\DLLs\BagoumLib.dll" />
     <None Include="Assets\Danmokou\Patterns\feature testing\bezier.bdsl" />
@@ -370,6 +373,7 @@
     <None Include="Assets\SiMP\Dialogue\simp.dialogue.ex.1.txt" />
     <None Include="Assets\SiMP\Dialogue\simp.dialogue.3.1.txt" />
     <None Include="Assets\SiMP\Dialogue\simp.dialogue.4.4.txt" />
+    <None Include="Assets\Danmokou\Patterns\PlayerFire\TojikoLightning.bdsl" />
     <None Include="Assets\Danmokou\Patterns\feature testing\z position support.bdsl" />
     <None Include="Assets\SZYU\Fonts\ubuntu-font-family-0.83\copyright.txt" />
     <None Include="Assets\Danmokou\UXML\nodes\UINodeLRSwitch.uss" />

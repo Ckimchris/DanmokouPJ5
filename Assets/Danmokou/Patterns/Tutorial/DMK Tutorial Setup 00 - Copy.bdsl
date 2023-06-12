@@ -1,4 +1,3 @@
-<#> strict(none)
 pattern { 
 	boss simp.mokou
 	bgm {
@@ -7,42 +6,239 @@ pattern {
 }
 phase(0)
 	paction(0)
-		shift-phase-to(1)
+		shift-phase-to(9)
 		
-<!> type non  `Summonables` #{
-<!> root 0 0
-phase 0
-	paction(0)
-		sync *-red* <0.5;:> gsrepeat {
-			times(3)
-			color { pather gpather lightning }
-			circle
-		} gsrepeat {
-			times(6)
-			spread(<100>)
-			color { /b / /w }
-		} pather(2, 1 + sine(1.6, 0.4, t), 
-			roffset(pxy(1 * t, sine(1, 0.2, t))), {
-				hueshift(120 * t)
-		})
-
-<!> type(spell, `This is a spell`)
-<!> hp(4000)
-<!> root(0, 2)
+<!> type(non, `This is a nonspell`)
+<!> hp(15000)
 phase(0)
 	paction(0)
-		sync(fireball-green/w, <0;0:2;0:90>, simp(nrvelocity(cr(2, -90))))
+	position(0, 2.5)
+		gtrepeat({
+			wait(3s)
+			times(_)
+			bindItr(i1)
+			wait-child
+		}, { 
+		position(rand(-3,3), 2.5)
+		async gcircle-blue/w <0.5;:> gcr2 1 120 <0.015;:9> {
+			p this
+		} gsr2 3 <> {
+			p add
+		} s tprot rotate + * (pm1(&i1) * 90) p2 * 4.5 p1
+			lerpin 0 0.9 cx 2
+			})
 
-        
+
+<!> type(non, `This is a nonspell`)
+<!> hp(15000)
+phase(0)
+	paction(0)
+	position(0, 2.5)
+		async(dot-red/w, <0;0:0;0:-130>, girepeat({
+			wait(30)
+			times(8)
+			bindItr(i1)
+		}, gsrepeat({				
+				times(17)
+				spread(<90>)
+				start { rv2.a +=f rand(lerpt(1, 16, -50, 0), lerpt(1, 16, 50, 0)) }
+			}, s(rvelocity(cx(3))))
+		))
+
+<!> type(non, `This is a nonspell`)
+<!> hp(15000)
+phase(0)
+	paction(0)
+	position(0, 2.5)
+        async(arrow-red/w, <0;0:0;0:0>, girepeat({
+                wait(4)
+		        rv2incr(<4>)
+            }, gcrepeat({
+                wait(lerpt(8, 16, 8, 2))
+                times(_)
+                rv2incr(<4>)
+            }, gsrepeat({
+                times(4)
+                circle
+            }, s(rvelocity(pxy(4, 0))))
+            )))
+
+<!> type(non, `This is a nonspell`)
+<!> hp(15000)
+phase(0)
+	paction(0)
+	position(0, 2.5)
+        async(arrow-red/w, <0;0:0;0:0>, girepeat({
+                wait(4)
+		        rv2incr(<4>)
+            }, gcrepeat({
+                wait(40)
+                times(_)
+                rv2incr(<4>)
+            }, gsrepeat({
+                times(21)
+                circle
+            }, s(rvelocity(pxy(3, 0))))
+            )))
+
+
+<!> type(non, `This is a spell`)
+<!> hp(4000)
+<!> root(0, 3)
+phase(0)
+	paction 0
+	gtrepeat({
+		times(_)
+		wait(4s)
+		wait-child
+	}, {
+		sync gstretchlaser-blue/ <;:-90> gsr2 2 <> {
+            p this
+        } laser(rvelocity(cy(0)), 1, 2, {
+            sfx2(x-laser-fire, x-laser-on)
+            s(1 + 49 * p)
+			length 10
+        })
+		async(arrow-red/w, <0;0:1;0:0>, gcrepeat({
+				times(3)
+				rv2incr(<4>)
+			}, s(rvelocity(cxy(2, 0))))
+		)
+	})
+
+
+<!> type(non, `This is a spell`)
+<!> hp(12000)
+<!> root(0, 2)
+phase(0)
+	paction 0
+		async(_, <>, girepeat {
+			times(_)
+			wait(120)
+			color { blue }
+			##alternate t
+			sequential
+		} {
+			gcrepeat {
+				colorr gdlaser-*/b
+				wait(20)
+				times(3)
+				target(ra, Lplayer)
+				rv2incr(<10>)
+			} laser(null, 1, 3, { dsfx })
+			gcrepeat {
+				colorr gdlaser-*/b
+				wait(20)
+				target(ra, Lplayer)
+			} laser(null, 1, 3, { sfx2(x-laser-fire, x-laser-on) 
+				s + 1 * 10 p
+			})
+		})
 		
+<!> type(non, `This is a spell`)
+<!> hp(12000)
+<!> root(0, 2)
+phase(0)
+	paction 0
+		async(_, <>, girepeat {
+			times(_)
+			wait(120)
+			##alternate t
+			sequential
+		} {
+			gcrepeat {
+				colorr gdlaser-blue/b
+				times(rand(20, 40))
+				wait(8)
+				circle
+			} laser(null, 2, 0.5, { dsfx })
+		})
+
+<!> type(non, `This is a spell`)
+<!> hp(12000)
+<!> root(0, 2)
+phase(0)
+	paction 0
+		async(_, <>, girepeat {
+			for(2s)
+			times(rand(20, 40))
+			wait(8)
+			color { purple red blue yellow }
+			##alternate t
+			sequential
+		} {
+			gcrepeat {
+				colorr gdlaser-*/b
+				wait(20)
+				times(3)
+				target(ra, Lplayer)
+				rv2incr(<10>)
+			} laser(null, 1, 1, { dsfx })
+			gcrepeat {
+				colorr gdlaser-*/w
+				wait(20)
+				times(3)
+				target(ra, Lplayer)
+				rv2incr(<-10>)
+			} laser(null, 1, 1, { dsfx })
+		})
+
+<!> type(non, `This is a spell`)
+<!> hp(12000)
+<!> root(0, 3)
+phase(0)
+	paction 0
+
+	gtrepeat({
+		times(_)
+		wait(6s)
+		wait-child
+	}, {
+		async(_, <-90>, girepeat {
+			for(2s)
+			times(rand(20, 40))
+			color { blue }
+			##alternate t
+			sequential
+		} {
+			gcrepeat {
+				colorr gdlaser-*/w
+				times(3)
+				start { rv2.a +=f rand(9, 0) }
+				rv2incr(<10>)
+			} laser(null, 2, 2, { dsfx })
+			gcrepeat {
+				colorr gdlaser-*/w
+				times(3)
+				start { rv2.a +=f rand(-9, 0) }
+				rv2incr(<-10>)
+			} laser(null, 2, 2, { dsfx })
+		})
+
+		async(dot-red/w, <0;0:0;0:-180>, girepeat({
+			wait(60)
+			times(4)
+		}, gsrepeat({				
+				times(20)
+				rv2incr(<8>)
+			}, s(rvelocity(cx(2))))
+		))
+	})
+
 <!> type(non, `This is a nonspell`)
 <!> hp(4000)
 <!> root(0, 1)
-phase(0)
-	paction(0)
-		async sakura-pink/w <> gcrepeat {
-			wait(14)
-			times(_)
-			frv2(angle(cosine(8p, 800, timersec(phaset))))
-		} gsr2c 3 {
-		} s(rvelocity(cx(3)))
+phase 0 
+	paction 0
+		sync arrowlaser-blueteal <1;-1:0;0:0> gsrepeat {
+			times(8)
+			circle
+			bindItr(loop)
+		} laser(null, 1.5, 4, {
+			length(8)
+			dsfx
+			stagger(0.4)
+			dynamic(polar(
+				t,
+				sine(142, 1200, t)))
+		})

@@ -54,7 +54,7 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
     public double HP { get; private set; }
     public int maxHP = 1000;
     public double BladeFixDamage { get; private set; } = 0;
-    public int maxBladeFixDamage = 100;
+    private int maxBladeFixDamage = 300;
     public int currBladeFixDamage = 0;
     public int PhotoHP { get; private set; } = 1;
     private int maxPhotoHP = 1;
@@ -164,8 +164,7 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         allEnemies[enemyIndex = enemyIndexCtr++] = this;
         tokens.Add(orderedEnemies.Add(this));
         HP = maxHP;
-        BladeFixDamage = 0;
-        currBladeFixDamage = 0;
+        BladeFixDamage = 100;
         queuedDamage = 0;
         Vulnerable = Vulnerability.VULNERABLE;
         target = ServiceLocator.MaybeFind<PlayerController>();
@@ -187,6 +186,14 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
             hpPB.SetFloat(PropConsts.fillRatio, DisplayBarRatio);
             hpPB.SetColor(PropConsts.fillColor, currPhase.color1);
             healthbarSprite.SetPropertyBlock(hpPB);
+        }
+
+        if(meterSprite != null)
+        {
+            meterSprite.enabled = true;
+            meterSprite.GetPropertyBlock(meterPB);
+            meterPB.SetFloat("_F", 0f);
+            meterSprite.SetPropertyBlock(meterPB);
         }
 
         if (cardCircle != null) {
@@ -345,6 +352,7 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         else {
             bladeFixed = false;
         }
+
     }
 
     public override void RegularUpdateCollision() {
@@ -370,6 +378,8 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
             healthbarSprite.SetPropertyBlock(hpPB);
         }
         if(meterSprite != null) { 
+            meterPB.SetFloat("_F", (float)currBladeFixDamage/maxBladeFixDamage);
+            meterSprite.SetPropertyBlock(meterPB);
         }
     }
     
@@ -398,7 +408,8 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
     public bool TakeHit(in PlayerBullet pb, in Vector2 location, in uint bpiId) {
         if ((pb.data.bossDmg > 0 || pb.data.stageDmg > 0)
             && (pb.data.destructible || TryHitIndestructible(bpiId, pb.data.cdFrames))) {
-            QueuePlayerDamage(pb.data.bossDmg, pb.data.stageDmg, pb.firer);
+            QueuePlayerDamage(pb.data.bossDmg, pb.data.stageDmg, pb.data.statusDmg, pb.firer);
+
             ProcOnHit(pb.data.effect, location);
             return true;
         } else
@@ -447,12 +458,12 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
     private int queuedPhotoDamage = 0;
 
     //The reason we queue damage is to avoid calling eg. SM clear effects while in the middle of other entities' update loops.
-    public void QueuePlayerDamage(int bossDmg, int stageDmg, PlayerController firer) => 
-        QueuePlayerDamage(takesBossDamage ? bossDmg : stageDmg, firer);
+    public void QueuePlayerDamage(int bossDmg, int stageDmg, int statusDmg, PlayerController firer) => 
+        QueuePlayerDamage(takesBossDamage ? bossDmg : stageDmg, statusDmg, firer);
 
-    private void QueuePlayerDamage(int dmg, PlayerController firer) {
+    private void QueuePlayerDamage(int dmg, int status, PlayerController firer) {
         if (divertHP != null) {
-            divertHP.Value.to.QueuePlayerDamage(dmg, firer);
+            divertHP.Value.to.QueuePlayerDamage(dmg, status, firer);
             return;
         }
         if (!Vulnerable.TakesDamage()) return;
@@ -462,6 +473,9 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
                             M.Lerp(0, 1, shotgun, 1, SHOTGUN_MULTIPLIER);
         queuedDamage += dmg * multiplier * GameManagement.Difficulty.playerDamageMod;
         Counter.DoShotgun(shotgun);
+
+        currBladeFixDamage += status;
+        currBladeFixDamage = Mathf.Clamp(currBladeFixDamage, 0, maxBladeFixDamage);
     }
     private void PollDamage() {
         if (!Vulnerable.TakesDamage()) queuedDamage = 0;
@@ -473,11 +487,11 @@ public class Enemy : RegularUpdater, IBehaviorEntityDependent, ICircularSimpleBu
         if (HP <= 0) {
             Beh.OutOfHP();
             Vulnerable = Vulnerability.NO_DAMAGE; //Wait for new hp value to be declared
+            currBladeFixDamage = 0;
         } else if (modifyDamageSound) {
             if ((float) HP / maxHP < LOW_HP_THRESHOLD) {
                 Counter.AlertLowEnemyHP();
             }
-            //Debug.Log("Taking Damage");
         }
     }
     

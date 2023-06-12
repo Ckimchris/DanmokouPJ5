@@ -216,7 +216,7 @@ public static partial class SyncPatterns {
     private static SyncPattern _GuideEmpty(string? suffix, ExBPY indexer, (string, ExTP)[] saveV2s,
         (string, ExBPY)[] saveFs, GCXU<VTP> emptyPath, SyncPattern[] guided, bool isPlayer) {
         var emptySP = isPlayer ?
-            AtomicPatterns.Simple(emptyPath, new SBOptions(new[] {SBOption.Player(0, 0, "null")})) :
+            AtomicPatterns.Simple(emptyPath, new SBOptions(new[] {SBOption.Player(0, 0, 0, "null")})) :
             AtomicPatterns.S(emptyPath);
         if (string.IsNullOrEmpty(suffix) || suffix![0] != '.')
             suffix = $".{RNG.RandString(8)}";

@@ -254,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 5693660460388628151, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: m_Name
-      value: Player - Sakuya
+      value: Player - Tojiko
       objectReference: {fileID: 0}
     - target: {fileID: 5693660460388628151, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
@@ -264,54 +264,54 @@ PrefabInstance:
     - target: {fileID: 7710510051309238203, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.0666667
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 7710510051309238203, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.0666667
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7710510051309238203, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 80467649196729930, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: 1779817762, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     - target: {fileID: 8113129794422794037, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: animate.frames.idleAnim.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 80467649196729930, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: 1779817762, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     - target: {fileID: 8113129794422794037, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: animate.frames.idleAnim.Array.data[1].sprite
       value: 
-      objectReference: {fileID: 80467649196729930, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: 1779817762, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     - target: {fileID: 8113129794422794037, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: animate.frames.leftAnim.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -2856173538836399905, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: 672390845, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     - target: {fileID: 8113129794422794037, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: animate.frames.leftAnim.Array.data[1].sprite
       value: 
-      objectReference: {fileID: -2856173538836399905, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: 672390845, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     - target: {fileID: 8113129794422794037, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: animate.frames.rightAnim.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 2614884143906281629, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: -361058023, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     - target: {fileID: 8113129794422794037, guid: 4f67648ec56d30044b03a5959e19a4e0,
         type: 3}
       propertyPath: animate.frames.rightAnim.Array.data[1].sprite
       value: 
-      objectReference: {fileID: 2614884143906281629, guid: 948e44d84458076409c43353a5c041d4,
+      objectReference: {fileID: -361058023, guid: 3e3a58a0680ebe144b1ff25673358db3,
         type: 3}
     m_RemovedComponents:
     - {fileID: 7102800307516943931, guid: 4f67648ec56d30044b03a5959e19a4e0, type: 3}

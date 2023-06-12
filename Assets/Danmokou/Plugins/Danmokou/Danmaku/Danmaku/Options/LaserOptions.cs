@@ -149,8 +149,8 @@ public record LaserOption {
     /// </summary>
     public static LaserOption NoGraze() => new NoGrazeFlag();
     
-    public static LaserOption Player(int cdFrames, int bossDmg, int stageDmg, string effect) =>
-        new PlayerBulletProp(new PlayerBulletCfg(cdFrames, false, bossDmg, stageDmg, ResourceManager.GetEffect(effect)));
+    public static LaserOption Player(int cdFrames, int bossDmg, int stageDmg, int statusDmg, string effect) =>
+        new PlayerBulletProp(new PlayerBulletCfg(cdFrames, false, bossDmg, stageDmg, statusDmg, ResourceManager.GetEffect(effect)));
     
     #region impl
     public record CompositeProp : ValueProp<LaserOption[]>, IUnrollable<LaserOption> {

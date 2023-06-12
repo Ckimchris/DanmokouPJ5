@@ -72,7 +72,7 @@ public struct DelegatedCreator {
         if (options.player.Try(out var bse)) {
             //TODO add cdframes to sb Player cmd
             var bc = BulletManager.GetMaybeCopyPool(style).BC;
-            pi.ctx.playerBullet = new PlayerBullet(new PlayerBulletCfg(bc.againstEnemyCooldown, bc.Destructible, bse.boss, bse.stage, bse.effStrat), pi.ctx.PlayerController);
+            pi.ctx.playerBullet = new PlayerBullet(new PlayerBulletCfg(bc.againstEnemyCooldown, bc.Destructible, bse.boss, bse.stage, bse.status, bse.effStrat), pi.ctx.PlayerController);
         } else
             pi.ctx.playerBullet = null;
         BulletManager.RequestSimple(style, 

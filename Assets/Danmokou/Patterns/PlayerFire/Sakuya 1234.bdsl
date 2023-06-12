@@ -1,0 +1,17 @@
+gtr {
+	wt 12 _
+	wait-child
+} firesame
+	## free fire
+	async knife-blue <> gcrepeat { 
+		wait(8)
+		times(_)
+		sfx(x-pc-fire-1)
+	} gsr {
+		clip(<= powerf p)
+		times(1)
+	} simple tprot py(17) {
+		player(15, 15, 1, oh1-blue)
+	}
+	## free cancellation
+	noop

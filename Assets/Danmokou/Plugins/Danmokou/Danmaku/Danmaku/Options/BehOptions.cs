@@ -99,8 +99,8 @@ public record BehOption {
     /// Mark a Bullet as fired by the player, and allow it to check collision against enemies.
     /// <br/>Note: Currently only supported for pathers/lasers, and not for generic complex bullets.
     /// </summary>
-    public static BehOption Player(int cdFrames, int bossDmg, int stageDmg, string effect) =>
-        new PlayerBulletProp(new PlayerBulletCfg(cdFrames, false, bossDmg, stageDmg, ResourceManager.GetEffect(effect)));
+    public static BehOption Player(int cdFrames, int bossDmg, int stageDmg, int statusDmg, string effect) =>
+        new PlayerBulletProp(new PlayerBulletCfg(cdFrames, false, bossDmg, stageDmg, statusDmg, ResourceManager.GetEffect(effect)));
 
     /// <summary>
     /// Set the ID of the object.

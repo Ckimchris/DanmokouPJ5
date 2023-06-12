@@ -15,5 +15,5 @@ phase(0)
 			hueshift(60 * &loop + 120 * t)
 			dynamic(polar(
 				2 * t,
-				-14 * &lt + sine(2.1, 18, t + 1.1 * &lt)))
+				-14 * &lt + sine(142, 1200, t)))
 		})

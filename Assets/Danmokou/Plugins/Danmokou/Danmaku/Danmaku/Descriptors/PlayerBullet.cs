@@ -17,13 +17,15 @@ public readonly struct PlayerBulletCfg {
     public readonly bool destructible;
     public readonly int bossDmg;
     public readonly int stageDmg;
+    public readonly int statusDmg;
     public readonly EffectStrategy effect;
 
-    public PlayerBulletCfg(int cd, bool destructible, int boss, int stage, EffectStrategy eff) {
+    public PlayerBulletCfg(int cd, bool destructible, int boss, int stage, int status, EffectStrategy eff) {
         cdFrames = cd;
         this.destructible = destructible;
         bossDmg = boss;
         stageDmg = stage;
+        statusDmg = status;
         effect = eff;
     }
 

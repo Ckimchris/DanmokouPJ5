@@ -35,8 +35,8 @@ public class SBOption {
     /// <param name="bossDmg">Damage against boss enemies</param>
     /// <param name="stageDmg">Damage against stage enemies</param>
     /// <param name="effStrategy">On-hit effect</param>
-    public static SBOption Player(int bossDmg, int stageDmg, string effStrategy) =>
-        new PlayerProp((bossDmg, stageDmg, effStrategy));
+    public static SBOption Player(int bossDmg, int stageDmg, int statusDmg, string effStrategy) =>
+        new PlayerProp((bossDmg, stageDmg, statusDmg, effStrategy));
 
     #region impl
     public class ValueProp<T> : SBOption {
@@ -52,8 +52,8 @@ public class SBOption {
         public DirProp(GCXU<SBV2> f) : base(f) { }
     }
 
-    public class PlayerProp : ValueProp<(int bossDmg, int stageDmg, string effStrat)> {
-        public PlayerProp((int, int, string) data): base(data) { }
+    public class PlayerProp : ValueProp<(int bossDmg, int stageDmg, int statusDmg, string effStrat)> {
+        public PlayerProp((int, int, int, string) data): base(data) { }
     }
     
     #endregion
@@ -67,14 +67,14 @@ public class SBOptions {
     // the GCXU.ShareTypeAndCompile call in AtomicPAtterns
     public readonly GCXU<BPY>? scale = null;
     public readonly GCXU<SBV2>? direction = null;
-    public readonly (int boss, int stage, EffectStrategy effStrat)? player = null;
+    public readonly (int boss, int stage, int status, EffectStrategy effStrat)? player = null;
 
     public SBOptions(IEnumerable<SBOption> props) {
         foreach (var prop in props.Unroll()) {
             if (prop is ScaleProp sp) scale = sp.value;
             else if (prop is DirProp dp) direction = dp.value;
             else if (prop is PlayerProp pp) {
-                player = (pp.value.bossDmg, pp.value.stageDmg, ResourceManager.GetEffect(pp.value.effStrat));
+                player = (pp.value.bossDmg, pp.value.stageDmg, pp.value.statusDmg, ResourceManager.GetEffect(pp.value.effStrat));
             } else throw new Exception($"Simple Bullet option {prop.GetType()} not handled.");
         }
     }

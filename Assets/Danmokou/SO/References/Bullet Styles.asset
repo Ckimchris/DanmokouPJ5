@@ -163,6 +163,9 @@ MonoBehaviour:
     - name: amuletdd
       prefab: {fileID: 4623879621751819397, guid: c4c0ea3703e986f4b85f4ddaa69724a7,
         type: 3}
+    - name: knife
+      prefab: {fileID: 4623879621751819397, guid: f2cda64a52e75b943981b6e21f4be6de,
+        type: 3}
   - groupTitle: Nonsimple
     prefabs:
     - name: moon
