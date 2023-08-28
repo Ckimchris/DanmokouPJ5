@@ -1,0 +1,30 @@
+script
+place l1 tojiko
+place l2 sakuya
+place r1 yuuka
+sle tojiko normal
+sre yuuka normal
+sle sakuya normal
+.z `At this rate...`
+sle tojiko normal
+.z `Miss Kazami. What exactly did the High Prince and Miss Remilia do?`
+sre yuuka normal
+.z `I found them sleeping in the middle of my garden. Both of them passed out drunk, crumpling my precious sunflowers under their bodies.`
+sle tojiko normal
+.z `...`
+sle sakuya normal
+.z `...Another one of their drunken nights out was it?`
+sre yuuka normal
+.z `When they both awoke they fled when they saw me. I saw them flee towards this direction.`
+sle tojiko normal
+.z `You can come see them. You can go right on ahead.`
+sle sakuya normal
+.z `Tojiko?!`
+sle tojiko normal
+.z `If they are going to do something stupid then there isn’t any reason for us to be involved. Her mood is in a slightly less destructive mood so at least the temple won’t come crashing down.`
+sle sakuya normal
+.z `I suppose...`
+sle tojiko normal
+.z `Shall we get some tea in the meantime.`
+sle sakuya normal
+.z `Let’s...After you.`

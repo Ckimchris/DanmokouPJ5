@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a92301f86b4dd690557658c7243e8b, type: 3}
+  m_Name: BossConfig
+  m_EditorClassIdentifier: 
+  boss: {fileID: 8397979039599467052, guid: 366f4a61007c67b458668623bd3cd37e, type: 3}
+  localizationBaseKey: boss.yuuka
+  m_casualName:
+    useReference: 0
+    reference: 
+    hardcoded:
+      en: Yuuka Kazami
+      jp: Yuuka Kazami
+  m_bossPracticeName:
+    useReference: 0
+    reference: 
+    hardcoded:
+      en: Yuuka Kazami
+      jp: Yuuka Kazami
+  replayNameOverride:
+    useReference: 0
+    reference: 
+    hardcoded:
+      en: Yuuka Kazami
+      jp: Yuuka Kazami
+  bottomTrackerNameOverride:
+    useReference: 0
+    reference: 
+    hardcoded:
+      en: Yuuka Kazami
+      jp: Yuuka Kazami
+  stateMachine: {fileID: 4900000, guid: 5c2fdd5b12ad25a4fa86cae9a45b54a1, type: 3}
+  key: gj.yuuka
+  colors: {fileID: 11400000, guid: 9133996a4a716f14d85c1b4b07b6dfb0, type: 2}
+  cardRotator: 
+  spellRotator: 
+  profile:
+    leftSidebar: {fileID: 0}
+    rightSidebar: {fileID: 0}
+  defaultNonBG: {fileID: 5180723301924424041, guid: 54af7e21f5658a34eb43a871eff483aa,
+    type: 3}
+  defaultSpellBG: {fileID: 5180723301924424041, guid: 96832a8ee1768044894f1fde7b536a94,
+    type: 3}
+  defaultIntoSpellTransition: {fileID: 11400000, guid: 9b0abf82e07299741a4d64ecd57ff7e6,
+    type: 2}
+  defaultIntoNonTransition: {fileID: 11400000, guid: 23d9a9fbcd555004c9905acab3bc372a,
+    type: 2}
+  bossCutin: {fileID: 2426727079670566650, guid: f045df547bbb945448c64d7200a75bda,
+    type: 3}
+  spellCutins:
+  - {fileID: 160725723660692450, guid: f9fe4f78caa8355409b9772b0cf426c8, type: 3}
+  - {fileID: 2426727079670566650, guid: f045df547bbb945448c64d7200a75bda, type: 3}

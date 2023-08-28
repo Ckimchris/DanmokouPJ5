@@ -42,6 +42,7 @@ public static partial class LocalizedStrings {
 		{ "dialogue.elly", DialogueMetadata.elly },
 		{ "dialogue.yukari", DialogueMetadata.yukari },
 		{ "dialogue.unknown", DialogueMetadata.unknown },
+		{ "dialogue.tojiko", DialogueMetadata.tojiko },
 		{ "dialogue.tokiko", DialogueMetadata.tokiko },
 		{ "dialogue.kurokoma", DialogueMetadata.kurokoma },
 		{ "dialogue.sagume", DialogueMetadata.sagume },

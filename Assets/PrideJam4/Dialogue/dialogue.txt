@@ -1,0 +1,34 @@
+script
+place l1 tojiko
+place l2 sakuya
+place r1 yuuka
+sre yuuka normal
+.z `Where are they?`
+sle tojiko normal
+sre yuuka normal
+sle sakuya normal
+.z `Yuuka? What are you doing here?`
+sre yuuka normal
+.z `The Four Eared Owl and the Tiny Bat? Where are they? Those two are going to pay!`
+sle tojiko normal
+.z `Sakuya? Who is this person?`
+sle sakuya normal
+.z `Her name is Yuuka. The one who tends to the Garden of the Sun. If she is asking about a Four Eared Owl and a Bat then it must be about the Mistress and the High Prince.`
+sle tojiko normal
+.z `Either way. We can not let her see them now. They will tear the Mausoleum to pieces.`
+sle sakuya normal
+.z `Agreed. We are just going to have to take her on now to see if we can temper her mood.`
+sle sakuya normal
+.z `To take someone like Yuuka down we are going to have to work together.`
+sle sakuya normal
+.z `Use the switch key (Space Bar) to switch between Tojiko and I. The knives I have on hand do not deal a lot of damage however they instead fill the yellow magnetize bar found just above Yuuka’s head.`
+sle tojiko normal
+.z `My lightning is very powerful and it even automatically tracks any enemy that has the magnetize bar filled with any amount. However my lightning will also cause the magnetize bar to deplete.`
+sle sakuya normal
+.z `Use X to take advantage of my time slowing abilities. Both of us can use it. It will take coordination to make the best out of our abilities. But together I know we can win.`
+sle sakuya normal
+.z `Lets go Tojiko!`
+sle tojiko normal
+.z `Right behind you!`
+sre yuuka normal
+.z `Stand in my way will you?`

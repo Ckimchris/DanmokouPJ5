@@ -11,7 +11,7 @@ gtr {
 		clip(<= powerf p)
 		times(1)
 	} simple tprot py(17) {
-		player(15, 15, 1, oh1-blue)
+		player(6, 6, 1, oh1-blue)
 	}
 	## free cancellation
 	noop

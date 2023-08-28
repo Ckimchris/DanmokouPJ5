@@ -57,11 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TestLinuxReflection.cs" />
+    <Compile Include="Assets\PrideJam4\Scripts\DemoPrideGameJamDef.cs" />
+    <Compile Include="Assets\PrideJam4\Scripts\XMLMainMenuPGJ.cs" />
     <Compile Include="Assets\Danmokou\Models\MirrorShatter\MirrorBreak.cs" />
     <Compile Include="Assets\Sample\Scripts\DemoGameDef.cs" />
     <Compile Include="Assets\Danmokou\Scenes\Scratch\SetT.cs" />
     <Compile Include="Assets\Sample\Scripts\XMLMainMenuGJ.cs" />
     <Compile Include="Assets\Scripts\FadeOutStart.cs" />
+    <Compile Include="Assets\PrideJam4\TimeScalePause.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Danmokou\Plugins\DLLs\protobuf-net.dll" />
@@ -98,6 +101,7 @@
     <None Include="Assets\Danmokou\MiniProjects\WebGL Demo\060 polar.txt" />
     <None Include="Assets\Danmokou\Patterns\feature testing\summon testing 1.bdsl" />
     <None Include="Assets\Danmokou\UXML\structures\Row.uxml" />
+    <None Include="Assets\Danmokou\Patterns\cutin slides\PlayerSpellCutins\opacity u to d.bdsl" />
     <None Include="Assets\Danmokou\Patterns\cutin slides\PlayerSpellCutins\opacity u to d (left).bdsl" />
     <None Include="Assets\Danmokou\Patterns\PlayerFire\Mokou Sun 12.bdsl" />
     <None Include="Assets\Danmokou\Patterns\Testing\Phony Stage 1.txt" />
@@ -163,6 +167,7 @@
     <None Include="Assets\Danmokou\Patterns\Testing\Summon Time Test.txt" />
     <None Include="Assets\Danmokou\Patterns\feature testing\show anims.bdsl" />
     <None Include="Assets\Danmokou\MiniProjects\WebGL Demo\050 circle of circles.txt" />
+    <None Include="Assets\PrideJam4\Scripts\stage.txt" />
     <None Include="Assets\Danmokou\UXML\ScrollHeightFix.uss" />
     <None Include="Assets\Danmokou\Patterns\Testing\IRepeat1 Test.txt" />
     <None Include="Assets\BRuH\Scripts\test-junko.txt" />
@@ -218,6 +223,7 @@
     <None Include="Assets\Danmokou\Patterns\cutin slides\GhostSpellCutins\slide l to rd.bdsl" />
     <None Include="Assets\BRuH\Dialogue\jp\jp.kurokoma.1.txt" />
     <None Include="Assets\Danmokou\Patterns\examples\shapes.bdsl" />
+    <None Include="Assets\PrideJam4\Dialogue\dialogueend.txt" />
     <None Include="Assets\Danmokou\UXML\nodes\UINodeLR2Switch.uxml" />
     <None Include="Assets\Danmokou\SO\Shots\Replays\default_shot.dat.txt" />
     <None Include="Assets\Danmokou\UXML\structures\Column.uxml" />
@@ -392,6 +398,7 @@
     <None Include="Assets\BRuH\Dialogue\jp\jp.sagume.2.txt" />
     <None Include="Assets\Danmokou\UXML\nodes\UINode Achievement.uxml" />
     <None Include="Assets\Danmokou\Rendering\Shaders\Core Firing\Bullet Indirect.shader" />
+    <None Include="Assets\PrideJam4\Scripts\boss.txt" />
     <None Include="Assets\Danmokou\Patterns\examples\moon test.bdsl" />
     <None Include="Assets\SiMP\Scripts\simp.stage5_v3.bdsl" />
     <None Include="Assets\Danmokou\UXML\structures\Markdown\MkLineFragmentText.uxml" />
@@ -436,6 +443,7 @@
     <None Include="Assets\Danmokou\Patterns\dialogue opacity test.bdsl" />
     <None Include="Assets\Danmokou\Rendering\Shaders\Display\UI\FillBar MoF 2Way.shader" />
     <None Include="Assets\BRuH\Dialogue\jp\jp.kurokoma.2.txt" />
+    <None Include="Assets\PrideJam4\Dialogue\dialogue.txt" />
     <None Include="Assets\Danmokou\Patterns\examples\new lasers.bdsl" />
     <None Include="Assets\SZYU\Fonts\ubuntu-font-family-0.83\FONTLOG.txt" />
     <None Include="Assets\Danmokou\Patterns\examples\structural\pathers.bdsl" />

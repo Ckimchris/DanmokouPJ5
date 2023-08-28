@@ -74,7 +74,11 @@ public static partial class LocalizedStrings {
 		public static readonly LString kurokoma = new LText("Kurokoma Saki",
 			(Locales.JP, "驪駒早鬼"))
 			{ ID = "dialogue.kurokoma" };
-		
+
+		public static readonly LString tojiko = new LText("Tojiko",
+			(Locales.JP, "屠自古"))
+			{ ID = "dialogue.tojiko" };
+
 		public static readonly LString tokiko = new LText("Tokiko",
 			(Locales.JP, "朱鷺子"))
 			{ ID = "dialogue.tokiko" };

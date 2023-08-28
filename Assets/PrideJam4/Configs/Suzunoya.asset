@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87ab70b3d8149c0861cb6fd8068c3fa, type: 3}
+  m_Name: Suzunoya
+  m_EditorClassIdentifier: 
+  renderGroupMimic: {fileID: 836292319904304369, guid: ad089b1aca3d7bb4a9edead2f2fb9b95,
+    type: 3}
+  entityMimics:
+  - {fileID: 8236975217580243255, guid: 09778f2d7b7306340a39ab0ea5b1c76d, type: 3}
+  - {fileID: 6378047928813636694, guid: 31440aa289b1b2d429140b93a345d2dd, type: 3}
+  - {fileID: 3096344507094870328, guid: c366f0609bc50de4aa144599c6a88e6b, type: 3}
+  - {fileID: 5466135841841681093, guid: b09330a2ff6055743b987e375bda3083, type: 3}

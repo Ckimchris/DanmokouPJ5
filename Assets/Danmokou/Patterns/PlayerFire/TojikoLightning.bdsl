@@ -21,7 +21,7 @@ gtr {
 				delete(> (t - LaserLastActiveT(mine), 1) | (neq &pid playerid mine))
 				deactivate(> playerUnfiringT(mine) 0)
 				nonpiercing
-				player(12, 25, 15, -1, oh1-red-pt)
+				player(12, 30, 15, -1, oh1-red-pt)
 		})
 
 	## cancellation

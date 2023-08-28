@@ -299,6 +299,7 @@
     <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\Pooling\Pooler.cs" />
     <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\Scriptables\ADVReferences.cs" />
     <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\Math\MathRepos\GenericMath\ExMDifficulty.cs" />
+    <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\VN\Characters\TojikoMimic.cs" />
     <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\Scriptables\Player\Ability\AbilityCfg.cs" />
     <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\Danmaku\Descriptors\Pather.cs" />
     <Compile Include="Assets\Danmokou\Plugins\Danmokou\Danmaku\Danmaku\Descriptors\DebugColliderInfo.cs" />

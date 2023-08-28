@@ -30,4 +30,4 @@ MonoBehaviour:
   multiD: {fileID: 0}
   multiM: {fileID: 0}
   multiK: {fileID: 0}
-  onSwap: {fileID: 0}
+  onSwap: {fileID: 11400000, guid: 4e6a11df7ba1b7d408c4b62489a872d1, type: 2}
